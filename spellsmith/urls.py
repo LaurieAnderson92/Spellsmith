@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from spellbook.views import home
+from spellbook.views import home, Postlist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='spellbook'),
+    path('', Postlist.as_view(), name='spellbook'),
 ]
