@@ -7,13 +7,15 @@
         <div class="col-md-3">
             <div class="card mb-3">
                 <div class="card-body">
+                    <a href="{% url 'spell_detail' spell.id %}">
                     <h2 class="card-title">{{ spell.name }}</h2>
                     <p class="card-text">{{ spell.excerpt }}</p>
                     <hr />
                     <p class="card-text text-muted h6">{{ spell.school}}</p>
-                    </div>
+                    </a>
                 </div>
             </div>
+        </div>
     {% endfor %}
     </div>
 </div>
