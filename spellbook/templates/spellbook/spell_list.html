@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
     {% for spell in spell_list %}
-        <h1> {{ spell.name }} </h1>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">{{ spell.name }}</h2>
+                    <p class="card-text">{{ spell.excerpt }}</p>
+                    <hr />
+                    <p class="card-text text-muted h6">{{ spell.school}}</p>
+                    </div>
+                </div>
+            </div>
     {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
