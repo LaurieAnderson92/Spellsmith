@@ -39,6 +39,11 @@
                 </p>
             </div>
         </div>
+        {% if user.is_authenticated and spell.creator == user %}
+        <a href="{% url 'spell_edit' spell.id %}" class="btn btn-edit">
+            Edit
+        </a>
+        {% endif %}
     </div>
 </div>
 

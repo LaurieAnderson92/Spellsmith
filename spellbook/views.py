@@ -33,7 +33,7 @@ def spell_detail(request, id):
         {"spell": spell},
     )
 
-def spell_create (request):
+def spell_create(request):
     """
     A function that displays the spell_create
     """
@@ -52,3 +52,21 @@ def spell_create (request):
         "spellbook/spell_create.html",
         {"spell_form": spell_form}
 )
+
+def spell_edit(request, id):
+    """
+    View to edit spells
+    """
+    spell = get_object_or_404(Spell, pk=id)
+    if request.method == "POST":
+        spell_form = SpellForm(data=request.POST, instance=spell)
+        if spell_form.is_valid():
+            spell.save()
+            return HttpResponseRedirect(reverse('spell_detail', kwargs={'id': id}))
+    spell_form = SpellForm(instance=spell)
+    
+    return render(
+        request,
+        "spellbook/spell_create.html",
+        {"spell_form": spell_form}
+    )
