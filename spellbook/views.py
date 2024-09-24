@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.views import generic
 from django.urls import reverse
 from .models import Spell
@@ -70,3 +70,14 @@ def spell_edit(request, id):
         "spellbook/spell_create.html",
         {"spell_form": spell_form}
     )
+
+def spell_delete(request, id):
+    """
+    view to delete spells
+    """
+    spell = get_object_or_404(Spell, pk=id)
+
+    if spell.creator == request.user:
+        spell.delete()
+
+    return redirect('home')
