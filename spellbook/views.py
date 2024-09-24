@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views import generic
+from django.urls import reverse
 from .models import Spell
 from .forms import SpellForm
 
@@ -38,7 +39,16 @@ def spell_create (request):
     """
     spell_form = SpellForm()
 
+    if request.method == "POST":
+        spell_form = SpellForm(data=request.POST)
+        if spell_form.is_valid():
+            spell = spell_form.save(commit=False)
+            spell.creator = request.user
+            spell.save()
+            return HttpResponseRedirect('spell_list')
+
     return render(
         request,
-        "spellbook/spell_create.html"
+        "spellbook/spell_create.html",
+        {"spell_form": spell_form}
 )
