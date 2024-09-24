@@ -45,7 +45,8 @@ def spell_create(request):
             spell = spell_form.save(commit=False)
             spell.creator = request.user
             spell.save()
-            return HttpResponseRedirect('spell_list')
+            id = spell.id
+            return HttpResponseRedirect(reverse('spell_detail', kwargs={'id': id}))
 
     return render(
         request,
