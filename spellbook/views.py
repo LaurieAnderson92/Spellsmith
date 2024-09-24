@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Spell
+from .forms import SpellForm
 
 # Create your views here.
 
@@ -30,3 +31,14 @@ def spell_detail(request, id):
         "spellbook/spell_detail.html",
         {"spell": spell},
     )
+
+def spell_create (request):
+    """
+    A function that displays the spell_create
+    """
+    spell_form = SpellForm()
+
+    return render(
+        request,
+        "spellbook/spell_create.html"
+)
