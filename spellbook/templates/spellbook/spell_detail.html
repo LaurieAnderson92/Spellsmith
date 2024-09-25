@@ -28,15 +28,18 @@
                     Duration: {{spell.duration}} {% if spell.concentration == True %} <em>(concentration)</em> {% endif %}
                     <br>
                     {{ spell.description | safe }}
-                    {% if ap_enhancements is not null %}
                     <br>
-                    AP Enhancements:
-                    {{ spell.ap_enhancements | safe  }}
+                    {% if spell.ap_enhancements %}
+                        <br>
+                        <strong>AP Enhancements:</strong>
+                        <br>
+                        {{ spell.ap_enhancements | safe  }}
                     {% endif %}
-                    {% if mp_enhancements is not null %}
+                    {% if spell.mp_enhancements %}
                     <br>
-                    MP Enhancements:
-                    {{ spell.mp_enhancements | safe  }}
+                        <strong>MP Enhancements:</strong>
+                        <br>
+                        {{ spell.mp_enhancements | safe  }}
                     {% endif %}
                 </p>
             </div>
