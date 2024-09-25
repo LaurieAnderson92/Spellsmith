@@ -8,7 +8,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ spell.name }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ spell.creator }} | {{ spell.created_on }}</p>
+                <p class="post-subtitle">{{ spell.school }} {% if spell.mp_cost == 0 %} (Cantrip) {% endif %}</p>
             </div>
         </div>
     </div>
@@ -21,24 +21,28 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    {{ spell.excerpt | safe }}
-                    School:  {{spell.school}}
-                    AP:      {{spell.ap_cost}}
-                    MP:      {{spell.mp_cost}}
+                    <span>Cost: {{spell.ap_cost}} AP {% if spell.mp_cost != 0 %} + {{spell.mp_cost}} {% endif %}</span>
+                    <br>
                     Range:   {{spell.range}}
-                    Duration:{{spell.duration}} {% if spell.concentration == True %} <em>(concentration)</em> {% endif %}
+                    <br>
+                    Duration: {{spell.duration}} {% if spell.concentration == True %} <em>(concentration)</em> {% endif %}
+                    <br>
                     {{ spell.description | safe }}
-                    {% if ap_enhancements == True %}
+                    {% if ap_enhancements is not null %}
+                    <br>
                     AP Enhancements:
-                    {{ spell.ap_enhancements }}
+                    {{ spell.ap_enhancements | safe  }}
                     {% endif %}
-                    {% if sp_enhancements == True %}
-                    SP Enhancements:
-                    {{ spell.ap_enhancements }}
+                    {% if mp_enhancements is not null %}
+                    <br>
+                    MP Enhancements:
+                    {{ spell.mp_enhancements | safe  }}
                     {% endif %}
                 </p>
             </div>
+            <p><em>{{ spell.excerpt | safe }}</em></p>
         </div>
+        <p class="post-subtitle">{{ spell.creator }} | {{ spell.created_on }}</p>
         {% if user.is_authenticated and spell.creator == user %}
         <a href="{% url 'spell_edit' spell.id %}" class="btn btn-edit">
             Edit
