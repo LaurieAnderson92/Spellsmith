@@ -43,14 +43,40 @@
         </div>
         <p class="post-subtitle">{{ spell.creator }} | {{ spell.created_on }}</p>
         {% if user.is_authenticated and spell.creator == user %}
-        <a href="{% url 'spell_edit' spell.id %}" class="btn btn-edit">
-            Edit
+        <a href="{% url 'spell_edit' spell.id %}">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
         </a>
-        <a href="{% url 'spell_delete' spell.id %}" class="btn btn-delete">
-            Delete
+        <a>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
         </a>
+        
         {% endif %}
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning: Deleting a spell is permanent</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        By clicking delete again, you confirm that you are deleting this spell for the community and understand that it cannot be recovered.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'spell_delete' spell.id %}">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/alert_modal.js' %}"></script>
+{% endblock %}
