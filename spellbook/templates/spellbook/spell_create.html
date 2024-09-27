@@ -43,7 +43,7 @@
           </div>
           {{ spell_form.description | as_crispy_field}}
           {{ spell_form.ap_enhancements | as_crispy_field}}
-          {{ spell_form.mp_enhancemnets | as_crispy_field}}
+          {{ spell_form.mp_enhancements | as_crispy_field}}
           {% csrf_token %}
           <button id="submitButton" type="submit"
                   class="btn btn-signup btn-lg">Submit</button>
