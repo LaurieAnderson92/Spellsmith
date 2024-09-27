@@ -21,7 +21,7 @@ class Spell(models.Model):
     concentration = models.BooleanField()
     description = models.TextField(unique=True)
     ap_enhancements = models.TextField(blank=True)
-    mp_enhancemnets = models.TextField(blank=True)
+    mp_enhancements = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
