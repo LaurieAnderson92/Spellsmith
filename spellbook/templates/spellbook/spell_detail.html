@@ -41,7 +41,7 @@
             </div>
             <p class="pt-3"><em>{{ spell.excerpt | safe }}</em></p>
         </div>
-        <p class="post-subtitle">{{ spell.creator }} | {{ spell.created_on }}</p>
+        <p>{{ spell.creator }} | {{ spell.created_on }}</p>
         {% if user.is_authenticated and spell.creator == user %}
         <a href="{% url 'spell_edit' spell.id %}">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
@@ -49,7 +49,6 @@
         <a>
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
         </a>
-        
         {% endif %}
     </div>
 </div>
