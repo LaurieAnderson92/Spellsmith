@@ -18,6 +18,9 @@ body{
 .card-body {
     background-color: #FCF5E5;
     box-shadow: 2px 2px 2px rgb(153, 150, 133);
+    border: 1px;
+    border-style: solid;
+    border-color: #222222;
 }
 
 a {

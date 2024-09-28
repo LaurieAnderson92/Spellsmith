@@ -2,53 +2,42 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-  <div class="container">
-      <div class="row g-0">
-          <div class="col-md-6 masthead-text">
-              <h1>Create A Spell</h1>
-          </div>
-      </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="row mb-4">
-    <div class="col card mb-4  mt-3 left  top">
-      <div class="card-body">
-        <form id="spellForm" method="post">
-          {{ spell_form.name | as_crispy_field}}
-          {{ spell_form.excerpt | as_crispy_field}}
-          <div class="row justify-content-center">
-            <div class = "col-md-4">
-              {{ spell_form.school | as_crispy_field}}
-            </div>
-            <div class = "col-md-4">
-              {{ spell_form.ap_cost | as_crispy_field}}
-            </div>
-            <div class = "col-md-4">
-              {{ spell_form.mp_cost | as_crispy_field}}
-            </div>
+    <div class="card-body">
+      <h1 class= "text-center p-3">Create A Spell</h1>
+      <form id="spellForm" method="post">
+        {{ spell_form.name | as_crispy_field}}
+        {{ spell_form.excerpt | as_crispy_field}}
+        <div class="row justify-content-center">
+          <div class = "col-md-4">
+            {{ spell_form.school | as_crispy_field}}
           </div>
-          <div class="row justify-content-center">
-            <div class = "col-md-4">
-              {{ spell_form.range | as_crispy_field}}
-            </div>
-            <div class = "col-md-4">
-              {{ spell_form.duration | as_crispy_field}}
-            </div>
-            <div class = "col-md-4">
-              {{ spell_form.concentration | as_crispy_field}}
-            </div>
+          <div class = "col-md-4">
+            {{ spell_form.ap_cost | as_crispy_field}}
           </div>
-          {{ spell_form.description | as_crispy_field}}
-          {{ spell_form.ap_enhancements | as_crispy_field}}
-          {{ spell_form.mp_enhancements | as_crispy_field}}
-          {% csrf_token %}
-          <button id="submitButton" type="submit"
-                  class="btn btn-signup btn-lg">Submit</button>
-        </form>
-      </div>
+          <div class = "col-md-4">
+            {{ spell_form.mp_cost | as_crispy_field}}
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class = "col-md-4">
+            {{ spell_form.range | as_crispy_field}}
+          </div>
+          <div class = "col-md-4">
+            {{ spell_form.duration | as_crispy_field}}
+          </div>
+          <div class = "col-md-4 pt-md-4 mt-md-3 ">
+            {{ spell_form.concentration | as_crispy_field}}
+          </div>
+        </div>
+        {{ spell_form.description | as_crispy_field}}
+        {{ spell_form.ap_enhancements | as_crispy_field}}
+        {{ spell_form.mp_enhancements | as_crispy_field}}
+        {% csrf_token %}
+        <button id="submitButton" type="submit"
+                class="btn btn-success btn-lg">Submit</button>
+      </form>
     </div>
   </div>
 </div>
