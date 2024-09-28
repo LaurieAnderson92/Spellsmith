@@ -3,6 +3,14 @@ body{
     font-family: Merienda, sans-serif;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
 .purple {
     color: #BA55D3
 }
@@ -31,3 +39,4 @@ a {
 a:hover {
     color: 	purple
 }
+
