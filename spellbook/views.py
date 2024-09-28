@@ -11,6 +11,7 @@ from .forms import SpellForm
 class SpellList(generic.ListView):
     model = Spell
     template_name = "spellbook/spell_list.html"
+    paginate_by = 12
 
 
 # Detail Page, 
