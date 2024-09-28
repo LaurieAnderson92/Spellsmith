@@ -1,3 +1,30 @@
+body{
+    background-color: whitesmoke;
+    font-family: Merienda, sans-serif;
+}
+
 .purple {
     color: #BA55D3
+}
+
+.nav-link {
+    color: aliceblue;
+}
+
+.nav-link:hover {
+    color: #BA55D3;
+}
+
+.card-body {
+    background-color: #FCF5E5;
+    box-shadow: 2px 2px 2px rgb(153, 150, 133);
+}
+
+a {
+    text-decoration: none;
+    color: 	#222222
+}
+
+a:hover {
+    color: 	purple
 }
