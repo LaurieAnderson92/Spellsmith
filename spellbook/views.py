@@ -115,3 +115,10 @@ def spell_delete(request, id):
             'You do not have permission to delete this spell'            
             )
         return redirect('home')
+
+
+def spell_about(request):
+    """
+    View for the About Page
+    """
+    return render(request, "spellbook/spell_about.html",)
