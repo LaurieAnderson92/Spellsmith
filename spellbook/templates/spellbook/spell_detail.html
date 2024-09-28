@@ -5,8 +5,7 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ spell.name }}</h1>
-                <p class="post-subtitle">{{ spell.get_school_display }} {% if spell.mp_cost == 0 %} (Cantrip) {% endif %}</p>
+                
             </div>
         </div>
     </div>
@@ -14,14 +13,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
+      <div class="card-body">
+              <h1 class="post-title">{{ spell.name }}</h1>
+                <p class="post-subtitle">{{ spell.get_school_display }} {% if spell.mp_cost == 0 %} (Cantrip) {% endif %}</p>
                 <p class="card-text">
-                    <span>Cost: {{spell.ap_cost}} AP {% if spell.mp_cost != 0 %} + {{spell.mp_cost}} {% endif %}</span>
+                    <strong>Cost:</strong> {{spell.ap_cost}} AP {% if spell.mp_cost != 0 %} + {{spell.mp_cost}} MP {% endif %}</span>
                     <br>
-                    Range:   {{spell.range}}
+                    <strong>Range:</strong>  {{spell.range}} 
                     <br>
-                    Duration: {{spell.duration}} {% if spell.concentration == True %} <em>(concentration)</em> {% endif %}
+                    <strong>Duration:</strong> {{spell.duration}} {% if spell.concentration == True %} <strong>(concentration)</strong> {% endif %}
                     <br>
                     {{ spell.description | safe }}
                     <br>
@@ -39,7 +39,7 @@
                     {% endif %}
                 </p>
             </div>
-            <p><em>{{ spell.excerpt | safe }}</em></p>
+            <p class="pt-3"><em>{{ spell.excerpt | safe }}</em></p>
         </div>
         <p class="post-subtitle">{{ spell.creator }} | {{ spell.created_on }}</p>
         {% if user.is_authenticated and spell.creator == user %}
