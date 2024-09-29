@@ -145,11 +145,11 @@ All pages on the website are responsive and have:
 The homepage of the SpellSmith website displays the list of spells that the community has created, alongside the spells that the Dungeon Coach has officially released, it's paginated to display 12 spells at a time.
 
 #### Spell Detail Page
-![Screenshot of the spell Detail page](assets/documentation/features_detailpage.png)
+![Screenshot of the spell Detail page](assets/documentation/features_detailpage.png)  
 Clicking on a spell detail page will display all of the mecanics of the spell, in the style similar to the DC20 spellblock in the free rules pdf.
 
 #### Create a Spell Page
-![Screenshot of the spell Detail page](assets/documentation/features_ca_spell.png)
+![Screenshot of the spell Detail page](assets/documentation/features_ca_spell.png)  
 Clicking The create a spell link will take you to a form with a POST method to the SQL Database; The form has Validation on the required fields that ensure the user is inputting data correctly into the database
 
 ### Future Implementations
@@ -158,9 +158,10 @@ A list all future implementations can be found [here](https://github.com/users/L
 
 Currently what I'd like to add are 
 
-#35
-#36
-#37
+[#35](https://github.com/LaurieAnderson92/Spellsmith/issues/35)
+[#36](https://github.com/LaurieAnderson92/Spellsmith/issues/35)
+[#37](https://github.com/LaurieAnderson92/Spellsmith/issues/37)
+[#38](https://github.com/LaurieAnderson92/Spellsmith/issues/38)  
 
 ### Accessibility
 
@@ -241,28 +242,25 @@ Heroku was used to deploy the live website. The instructions to achieve this are
 
 ## Testing
 
-
+Please refer to this [TESTING](TESTING.md) file
 
 Issues that required me to stop and think and research the awnser were listed as BUGS which Can be found [here](https://github.com/users/LaurieAnderson92/projects/4/views/1?filterQuery=Bug)
 
 ## Credits
 
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
-
-The Credits section is where you can credit all the people and sources you used throughout your project.
-
 ### Code Used
 
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
+I used the code to paginate the spell detail page which was taken from the CI django blog project.
 
 ### Content
 
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
+The Spells created by the super user were created by the Dungeon Coach which can be found [here](https://thedungeoncoach.com/pages/dc20-free-downloads)
 
-###  Media
-
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
-  
 ###  Acknowledgments
 
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
+* Rory, as ever, my mentor for giving me staunch advice when things got a little dire.
+* My Fiancee Sophie, for being a endless rock during times of strive, even if they don't know it.
+* Kera Cudmore, for being a enless source of insperation with their designs and readmes and proving the foundational templates that my readmes are based on.
+* My loved ones in the GFR sever who push me further
+* To the Dungeon Coach for creating an amazing and inspiring system, please hurry up with 0.9
+* And to you.
