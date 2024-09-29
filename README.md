@@ -95,8 +95,6 @@ Key Features
 #### 800080 | Eerie Black
 * Eerie black is a off black, and was chosen for the same reason as Seasalt, to mimic graphite or ink on parchment rather than the dark black associated with computer text.
 
-These colours also work for users with achromatic vision as can be demonstrated [here](https://coolors.co/f7f7f7-fcf5e5-ba55d3-800080-222222)
-
 ### Typography
 
 I chose to use the Merienda font from [Google Fonts](https://fonts.google.com/) to look like writing within a spellbook. Merienda has soft shapes, is slightly condensed, and has a rhythm which is an invitation to read short pieces of text.
@@ -129,39 +127,55 @@ I chose to use the Merienda font from [Google Fonts](https://fonts.google.com/) 
 
 ## Features
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/TheQuizArms#Features)
+The website is comprised of a home page, and about page, a spell detail page and a create a spell page alongside the AllAuth Pages.
 
-This section can be used to explain what pages your site is made up of.
+All pages on the website are responsive and have:
 
-### General features on each page
+* A favicon in the browser tab.  
+![Image of the favicon](assets/documentation/features_favicon.png)
 
-If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
+* A navigation bar alonside a text based logo, which also acts as a link to the homepage as per convention.  
+ ![Image of the Navigation bar](assets/documentation/features_navbar.png)
 
-I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
+ * Highlighted links with a onbrand purple colour.  
+ ![Image of a Highlighted link](assets/documentation/features_links.png)
+
+#### The Home Page
+![Screenshot of the homepage](assets/documentation/features_homepage.png)  
+The homepage of the SpellSmith website displays the list of spells that the community has created, alongside the spells that the Dungeon Coach has officially released, it's paginated to display 12 spells at a time.
+
+#### Spell Detail Page
+![Screenshot of the spell Detail page](assets/documentation/features_detailpage.png)
+Clicking on a spell detail page will display all of the mecanics of the spell, in the style similar to the DC20 spellblock in the free rules pdf.
+
+#### Create a Spell Page
+![Screenshot of the spell Detail page](assets/documentation/features_ca_spell.png)
+Clicking The create a spell link will take you to a form with a POST method to the SQL Database; The form has Validation on the required fields that ensure the user is inputting data correctly into the database
 
 ### Future Implementations
 
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+A list all future implementations can be found [here](https://github.com/users/LaurieAnderson92/projects/6/settings)  
+
+Currently what I'd like to add are 
+
+#35
+#36
+#37
 
 ### Accessibility
 
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
+I have been mindful during coding to ensure that the website is as accessible as possible. This has been achieved by:
 
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
-
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
-
-Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
+* Using semantic HTML.
+* Using a hover state on all buttons on the site to make it clear to the user if they are hovering over a button.
+* All Icons have aria labels so that they can be used by screen readers
+* The colour pallate works for users with achromatic vision as can be demonstrated [here](https://coolors.co/f7f7f7-fcf5e5-ba55d3-800080-222222)
 
 ## Technologies Used
 
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
-
 ### Languages Used
 
-Make a note here of all the languages used in creating your project. For the first project this will most likely just be HTML & CSS.
+HTML, CSS, Python
 
 ### Frameworks, Libraries & Programs Used
 
@@ -171,33 +185,65 @@ Make sure to include things like git, GitHub, the program used to make your wire
 
 A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
 
-## Deployment & Local Development
+#### Programs
+* [Git](https://git-scm.com/) - For version control.
+* [Github](https://github.com/) - To save and store the files in a could based repository.
+* [GitPod](https://www.gitpod.io/) - IDE used to create the site, access provided by CI.
+* [Favicon.io](https://favicon.io/) -  To find and create a favicon.
+* [Phind](https://www.phind.com/search?home=true) - A AI based search engine to help me troubleshoot problems.
+* [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
+* [Greenshot](https://getgreenshot.org/) - Used to take Screenshots.
+* [Heroku](https://dashboard.heroku.com/apps) - Used to deploy and host the site
 
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here](https://github.com/kera-cudmore/TheQuizArms#Deployment)
+#### Frameworks
+
+* [Django](https://www.djangoproject.com/) - The core frameowrk to make a data driven website.
+* [AllAuth](https://docs.allauth.org/en/latest/) - To provide the basic functionality for logging in, creating a user account and resetting a password.
+* [Crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) - To create a form capable of Posting to the database with defensive coding in CSRF tokens and future proofing if the database location changes.
+* [Gunicorn](https://gunicorn.org/) - Used to assist with a secure deployment in Heroku
+* [PostgreSQL](https://www.postgresql.org/) - Database methoodology supplied by CI
+
+#### Libaries
+* [Google Fonts](https://fonts.google.com/)- To import the font used on the website.
+* [Bootraps5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - provided the scalability and responsiveness design
+
+## Deployment & Local Development
 
 ### Deployment
 
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
+Heroku was used to deploy the live website. The instructions to achieve this are below:
+
+* Go to Github.
+* Find the repository for this project and create a fork [here](https://github.com/LaurieAnderson92/Spellsmith)
+* Login or sign up to Heroku
+* Click **New** > **Create New App**
+* Choose the app name and Region and click 'Create App'
+* Go to the 'Deploy' tab
+* Link up the forked github repoitory with the heroku app
+* Click **Deploy**
 
 ### Local Development
 
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
-
 #### How to Fork
 
-Place instructions on how to fork your project here.
+* Log in (or sign up) to Github.
+* Find the repository for this project [here](https://github.com/LaurieAnderson92/Spellsmith)
+* Click the **Fork** button in the top right corner.
 
 #### How to Clone
 
-Place instructions on how to clone your project here.
+* Log in (or sign up) to GitHub.
+* Find the repository for this project [here](https://github.com/LaurieAnderson92/Spellsmith)
+* Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+* Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+* Type 'git clone' into the terminal and then paste the link you copied in step 3. 
+* Press enter.
 
 ## Testing
 
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
 
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
-  
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+
+Issues that required me to stop and think and research the awnser were listed as BUGS which Can be found [here](https://github.com/users/LaurieAnderson92/projects/4/views/1?filterQuery=Bug)
 
 ## Credits
 
