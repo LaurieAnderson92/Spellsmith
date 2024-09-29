@@ -86,8 +86,8 @@ Key Features
 #### ba55d3 | Cosmic Latte
 * Cosmic Lattee was picked as it is the closest colour that resembled parchment but still has a soft colour for a nice contrast with the default text colour and the colour when the text is highlighted
 
-#### fcf5e5 | Steel Pink 
-* Steel pink is the same as Purple, but a few shades lighter with more green. I picked this colour as the highlighted text for the nav bar and the footer to better contast with the dark background
+#### #ce5fea | Heliotrope
+* Heliotrope is the same as Purple, but a few shades lighter with more green. I picked this colour as the highlighted text for the nav bar and the footer to better contast with the dark background for ally reasions
 
 #### 222222 | Purple
 * Purple was picked as the key accent colour as it is the same shade of purple that DC20 uses, and so creates a association between SpellSmith and DC20 in the vewers mind.
