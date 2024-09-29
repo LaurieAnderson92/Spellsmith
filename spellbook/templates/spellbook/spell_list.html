@@ -9,7 +9,7 @@
                 <a href="{% url 'spell_detail' spell.id %}">
                 <h2 class="card-title">{{ spell.name }}</h2>
                 <p class="card-text text-muted h6">{{ spell.get_school_display }}</p>
-                <hr/>
+                <hr>
                 <p class="card-text">{{ spell.excerpt }}</p>
                 </a>
             </div>
@@ -17,7 +17,7 @@
     </div>
 {% endfor %}
 </div>
-<!-----------------------------------------   Pagnation code, taken from Code|star project -->
+<!-- Pagnation code, taken from Code|star project -->
 <!-- This code creates the ability to cycle through the pages if the number is spells is 
 greater than the value set in the SpellList View -->
 {% if is_paginated %}
