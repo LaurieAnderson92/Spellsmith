@@ -115,7 +115,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 | --- | --- | --- | --- | --- |
 | Spell cards linked | Link directs the user to the associated spell's detail view | Clicked spell card | Directed to correct spell | Pass |
 | All cards - hover effect | All text on the cards should turn purple on hover  | Hover over each card on the page | Each card displayed the correct styling when hovered over | Pass |
-| Pagnaite the view | The user should be able to click next and previous if there are more than 12 spells | create 13 spells and move back and forth between the pages | PENDING | PENDING |
+| Pagnaite the view | The user should be able to click next and previous if there are more than 12 spells | create 13 spells and move back and forth between the pages | Next and Prev Buttons appear | Pass |
 
 `Spell Detail page`
 
