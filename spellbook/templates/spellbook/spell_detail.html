@@ -1,16 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- This DTL displays the full details of the spell correlating to the integer it was passed -->
 <div class="container">
     <div class="row">
@@ -18,7 +8,7 @@
               <h1 class="post-title">{{ spell.name }}</h1>
                 <p class="post-subtitle">{{ spell.get_school_display }} {% if spell.mp_cost == 0 %} (Cantrip) {% endif %}</p>
                 <p class="card-text">
-                    <strong>Cost:</strong> {{spell.ap_cost}} AP {% if spell.mp_cost != 0 %} + {{spell.mp_cost}} MP {% endif %}</span>
+                    <strong>Cost:</strong> {{spell.ap_cost}} AP {% if spell.mp_cost != 0 %} + {{spell.mp_cost}} MP {% endif %}
                     <br>
                     <strong>Range:</strong>  {{spell.range}} 
                     <br>
@@ -39,17 +29,14 @@
                         {{ spell.mp_enhancements | safe  }}
                     {% endif %}
                 </p>
-            </div>
             <p class="pt-3"><em>{{ spell.excerpt | safe }}</em></p>
         </div>
         <p>{{ spell.creator }} | {{ spell.created_on }}</p>
         {% if user.is_authenticated and spell.creator == user %}
-        <a href="{% url 'spell_edit' spell.id %}">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
-        </a>
-        <a>
-          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
-        </a>
+        <div class="row">
+          <div class="col-4 p-3"><a href="{% url 'spell_edit' spell.id %}" class="btn btn-secondary">Edit</a></div>
+          <div class="col-4 p-3"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button></div>
+        </div>
         {% endif %}
     </div>
 </div>
@@ -67,16 +54,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="{% url 'spell_delete' spell.id %}">
-          <button type="button" class="btn btn-danger">Delete</button>
-        </a>
+        <a href="{% url 'spell_delete' spell.id %}" class="btn btn-danger">Delete</a>
         
       </div>
     </div>
   </div>
 </div>
 {% endblock content %}
-
-{% block extras %}
-<script src="{% static 'js/alert_modal.js' %}"></script>
-{% endblock %}

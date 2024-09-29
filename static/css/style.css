@@ -11,6 +11,15 @@ footer {
     text-align: center;
   }
 
+a {
+    text-decoration: none;
+    color: 	#222222
+}
+
+a:hover {
+    color: 	purple
+}
+
 .purple {
     color: #BA55D3
 }
@@ -30,13 +39,3 @@ footer {
     border-style: solid;
     border-color: #222222;
 }
-
-a {
-    text-decoration: none;
-    color: 	#222222
-}
-
-a:hover {
-    color: 	purple
-}
-
